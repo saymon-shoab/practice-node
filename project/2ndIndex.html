@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1>hay, Odhri sushmita</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+    // console.log(str, Date.now())
+        
+    }
+    // setInterval(sayDate,2000, "hi Surovi")
+   document.querySelector("#stop").addEventListener('click',function(){
+    // console.log("stop Button Clicked")
+    clearInterval(intervelId)
+   })
+   document.querySelector("#start").addEventListener("click",function(){
+    // console.log("start Button Clicked")
+    const intervelId = setInterval(sayDate,2000, "hi Surovi")
+   })
+
+   function randomColorGenerator () {
+    const hax = '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F'
+    const cleanedHax = hax.replace(/,| /g,"");
+    let color = "#"
+    for (let i = 0; i < 6; i++) {
+     color += cleanedHax[Math.floor(Math.random() * 16)];
+    }
+    return color
+   }
+   document.querySelector("#start").addEventListener('click',function(){
+    console.log("start Clicked")
+    const bgCLorGenerated = randomColorGenerator()
+    document.querySelector("body").style.backgroundColor = bgCLorGenerated
+    console.log("color code: ",bgCLorGenerated)
+   })
+//    console.log(randomColorGenerator())
+
+</script>
+</html>
